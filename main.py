@@ -52,3 +52,15 @@ class FlightsCrawler:
             By.XPATH,
             '//input[@id="txtOutboundDate"]',
         ).click()
+
+    def set_outbound_mont_and_year(self, text):
+        time.sleep(1)
+        try:
+            self.driver.find_element(
+                By.XPATH,
+                f'//button[contains(string(), "{text}")]',
+            )
+            self.click_next_month()
+        except NoSuchElementException:
+            self.click_next_month()
+            self.set_outbound_mont_and_year(text)
