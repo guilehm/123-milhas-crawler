@@ -26,7 +26,7 @@ class FlightsCrawler:
             '//ul[@class="dropdown-menu"]/li/a[@class="airport"]',
         ).click()
 
-    def set_arrival(self, airport='BSB'):
+    def set_arrival(self, airport='CHG'):
         arrival_input = self.driver.find_element(
             By.XPATH,
             '//input[@id="txtArrivalLocation"]',
