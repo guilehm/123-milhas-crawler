@@ -76,3 +76,17 @@ class FlightsCrawler:
             By.XPATH,
             '//button[@id="buttonSearch"]'
         ).click()
+
+
+c = FlightsCrawler(headless=False)
+c._get_page()
+
+c.set_departure()
+
+c.set_arrival()
+c.click_outbound_input()
+c.set_outbound_mont_and_year('julho de 2022')
+
+c.set_outbound_day('01')
+time.sleep(1)
+c.search()
