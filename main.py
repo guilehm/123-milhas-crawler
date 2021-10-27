@@ -64,3 +64,9 @@ class FlightsCrawler:
         except NoSuchElementException:
             self.click_next_month()
             self.set_outbound_mont_and_year(text)
+
+    def set_outbound_day(self, day):
+        self.driver.find_element(
+            By.XPATH,
+            f'//tr[@class="uib-weeks"]/td[@class="uib-day text-center"]/button[contains(string(), "{day}")]'
+        ).click()
