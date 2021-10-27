@@ -13,7 +13,7 @@ class FlightsCrawler:
     def _get_page(self):
         self.driver.get(self.url)
 
-    def set_departure(self, airport='BSB'):
+    def set_departure(self, airport='congonhas'):
         departure_input = self.driver.find_element(
             By.XPATH,
             '//input[@id="txtDepartureLocation"]',
@@ -26,7 +26,7 @@ class FlightsCrawler:
             '//ul[@class="dropdown-menu"]/li/a[@class="airport"]',
         ).click()
 
-    def set_arrival(self, airport='CHG'):
+    def set_arrival(self, airport='Nova Iorque - Todos'):
         arrival_input = self.driver.find_element(
             By.XPATH,
             '//input[@id="txtArrivalLocation"]',
