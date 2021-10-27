@@ -70,3 +70,9 @@ class FlightsCrawler:
             By.XPATH,
             f'//tr[@class="uib-weeks"]/td[@class="uib-day text-center"]/button[contains(string(), "{day}")]'
         ).click()
+
+    def search(self):
+        self.driver.find_element(
+            By.XPATH,
+            '//button[@id="buttonSearch"]'
+        ).click()
