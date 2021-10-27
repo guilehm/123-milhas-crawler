@@ -46,3 +46,9 @@ class FlightsCrawler:
             By.XPATH,
             '//table[@class="uib-daypicker"]//tr[@class="uib-monthname"]//button[contains(@class, "pull-right")]',
         ).click()
+
+    def click_outbound_input(self):
+        self.driver.find_element(
+            By.XPATH,
+            '//input[@id="txtOutboundDate"]',
+        ).click()
