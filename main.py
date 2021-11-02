@@ -22,7 +22,6 @@ class FlightsCrawler:
         )
         departure_input.send_keys(airport)
         time.sleep(1)
-        # click on first result
         self.driver.find_element(
             By.XPATH,
             '//ul[@class="dropdown-menu"]/li/a[@class="airport"]',
@@ -35,7 +34,6 @@ class FlightsCrawler:
         )
         arrival_input.send_keys(airport)
         time.sleep(1)
-        # click on first result
         self.driver.find_element(
             By.XPATH,
             '//ul[@class="dropdown-menu"]/li/a[@class="airport"]',
