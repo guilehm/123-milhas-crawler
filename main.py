@@ -1,10 +1,9 @@
+import time
+
 from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.by import By
 
 from driver.driver_builder import Driver
-from selenium.webdriver.common.by import By
-import time
 
 BASE_URL = 'https://123milhas.com/'
 
