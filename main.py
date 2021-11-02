@@ -11,6 +11,7 @@ class FlightsCrawler:
     def __init__(self, headless=True, url=BASE_URL):
         self.url = url
         self.driver = Driver(headless=headless).get_driver()
+        self._get_page()
 
     def _get_page(self):
         self.driver.get(self.url)
