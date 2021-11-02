@@ -71,11 +71,11 @@ class FlightsCrawler:
 
 
 c = FlightsCrawler(headless=False)
-c._get_page()
 
-c.set_departure()
+# c.set_departure()
 
-c.set_arrival()
+# c.set_arrival()
+c.set_departure_and_arrival('congonhas', 'Nova Iorque - Todos')
 c.click_outbound_input()
 c.set_outbound_mont_and_year('julho de 2022')
 
