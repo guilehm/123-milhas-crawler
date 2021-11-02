@@ -16,29 +16,22 @@ class FlightsCrawler:
     def _get_page(self):
         self.driver.get(self.url)
 
-    def set_departure(self, airport='congonhas'):
-        departure_input = self.driver.find_element(
-            By.XPATH,
-            '//input[@id="txtDepartureLocation"]',
-        )
-        departure_input.send_keys(airport)
-        time.sleep(1)
-        self.driver.find_element(
-            By.XPATH,
-            '//ul[@class="dropdown-menu"]/li/a[@class="airport"]',
-        ).click()
+    def set_departure_and_arrival(self, departure_airport, arrival_airport):
+        for input_id, airport in [
+            ('txtDepartureLocation', departure_airport),
+            ('txtArrivalLocation', arrival_airport),
+        ]:
 
-    def set_arrival(self, airport='Nova Iorque - Todos'):
-        arrival_input = self.driver.find_element(
-            By.XPATH,
-            '//input[@id="txtArrivalLocation"]',
-        )
-        arrival_input.send_keys(airport)
-        time.sleep(1)
-        self.driver.find_element(
-            By.XPATH,
-            '//ul[@class="dropdown-menu"]/li/a[@class="airport"]',
-        ).click()
+            element = self.driver.find_element(
+                By.XPATH,
+                f'//input[@id="{input_id}"]',
+            )
+            element.send_keys(airport)
+            time.sleep(1)
+            self.driver.find_element(
+                By.XPATH,
+                '//ul[@class="dropdown-menu"]/li/a[@class="airport"]',
+            ).click()
 
     def click_next_month(self):
         self.driver.find_element(
