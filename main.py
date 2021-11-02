@@ -34,16 +34,13 @@ class FlightsCrawler:
                 '//ul[@class="dropdown-menu"]/li/a[@class="airport"]',
             ).click()
 
+        # click outbound input
+        self.driver.find_element(By.XPATH, '//input[@id="txtOutboundDate"]').click()
+
     def click_next_month(self):
         self.driver.find_element(
             By.XPATH,
             '//table[@class="uib-daypicker"]//tr[@class="uib-monthname"]//button[contains(@class, "pull-right")]',
-        ).click()
-
-    def click_outbound_input(self):
-        self.driver.find_element(
-            By.XPATH,
-            '//input[@id="txtOutboundDate"]',
         ).click()
 
     def set_outbound_mont_and_year(self, text):
@@ -73,11 +70,7 @@ class FlightsCrawler:
 
 c = FlightsCrawler(headless=False)
 
-# c.set_departure()
-
-# c.set_arrival()
 c.set_departure_and_arrival('congonhas', 'Nova Iorque - Todos')
-c.click_outbound_input()
 c.set_outbound_mont_and_year('julho de 2022')
 
 c.set_outbound_day('01')
